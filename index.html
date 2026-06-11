@@ -1,93 +1,1455 @@
-Build me a full luxury 3-page photography website for my business called Amanu Visuals.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amanu Visuals | Luxury Photography</title>
+  <meta
+    name="description"
+    content="Amanu Visuals offers luxury photography for weddings, maternity, newborn, branding, portraits, interiors, boudoir, fashion, family, and more."
+  />
+  <style>
+    :root {
+      --bg: #f7f1ea;
+      --bg-soft: #efe4d7;
+      --surface: #fffaf4;
+      --surface-2: #f3e7d8;
+      --text: #1a1816;
+      --muted: #6e6258;
+      --line: rgba(60, 38, 18, 0.12);
+      --accent: #c96f2d;
+      --accent-2: #e29a54;
+      --accent-dark: #9f531c;
+      --black: #121212;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(32, 20, 10, 0.10);
+      --shadow-soft: 0 10px 30px rgba(32, 20, 10, 0.07);
+      --radius: 22px;
+      --max-width: 1220px;
+      --transition: 240ms ease;
+    }
 
-Business details:
-- Business name: Amanu Visuals
-- Email: amanphotographyby@gmail.com
-- Phone: 206 530 5998
-- Style: luxury, elegant, modern, editorial, high-end
-- Main accent color: warm orange / burnt orange with cream, black, and soft neutral tones
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-Pages needed:
-1. Home page
-2. Portfolio page
-3. Booking page
+    html {
+      scroll-behavior: smooth;
+    }
 
-Photography services include:
-- maternity
-- portrait
-- newborn
-- branding
-- interior
-- elopement
-- boudoir
-- graduation
-- fashion
-- pets
-- cars
-- architecture
-- product
-- couples
-- family
-- gender reveal
-- wedding
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-Website requirements:
-- premium luxury photography aesthetic
-- mobile responsive
-- sticky navigation
-- strong hero section
-- portfolio gallery sections by category
-- booking/contact form
-- about section
-- services section
-- testimonials section with placeholder text clearly marked as sample testimonials
-- footer with business contact details
-- buttons for Book Now, View Portfolio, Contact
-- smooth scrolling
-- elegant typography
-- clean HTML, CSS, and optional JavaScript
-- no fake functionality claims
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-Home page should include:
-- hero banner
-- short brand introduction
-- featured services
-- selected gallery preview
-- about Amanu Visuals
-- sample testimonial placeholders clearly labeled
-- call to action to book
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-Portfolio page should include:
-- large gallery layout
-- separate sections or filters for categories like weddings, maternity, branding, family, fashion, etc.
-- easy way to add many images later
-- image cards or grid design
-- luxury editorial feel
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
 
-Booking page should include:
-- contact details
-- inquiry form
-- dropdown for photography type
-- preferred date
-- location
-- message box
-- section explaining the booking process
-- frequently asked questions
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
 
-Technical instructions:
-- Build as a real 3-page website with:
-  - index.html
-  - portfolio.html
-  - booking.html
-  - style.css
-  - optional script.js
-- Use relative links between pages
-- Include clear comments showing where I can replace placeholder images with my own
-- Use placeholder local image paths like:
-  images/hero.jpg
-  images/wedding-1.jpg
-  images/maternity-1.jpg
-- Make it easy for me to duplicate gallery items and add unlimited photos
-- Contact form can be frontend only, but add a comment showing where to connect Formspree
-- Write polished, luxury-style copy for the site
-- Do not invent real client reviews; label any review text as sample placeholder testimonials
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .sans {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .section-header .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-dark);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: var(--white);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(26, 24, 22, 0.18);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: rgba(201, 111, 45, 0.07);
+      color: var(--accent-dark);
+      border-color: var(--accent);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 241, 234, 0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(60, 38, 18, 0.08);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 1.2rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .brand-tag {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.76rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--text);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1.5px;
+      background: var(--accent);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 94vh;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(rgba(10, 10, 10, 0.50), rgba(10, 10, 10, 0.42)),
+        url("images/hero.jpg") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(201, 111, 45, 0.18), transparent 45%),
+        linear-gradient(180deg, transparent 70%, rgba(10, 10, 10, 0.35));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      padding: 60px 0;
+    }
+
+    .hero .eyebrow {
+      color: #f4d7be;
+    }
+
+    .hero .eyebrow::before {
+      background: #f4d7be;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.9rem, 7vw, 6rem);
+      line-height: 0.97;
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(255, 255, 255, 0.90);
+      font-size: 1.05rem;
+      margin-bottom: 26px;
+    }
+
+    .hero-stats {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 700px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      padding: 18px 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .stat span {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .about-grid,
+    .contact-grid,
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid rgba(60, 38, 18, 0.07);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .panel h3 {
+      font-size: 1.55rem;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .panel p {
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 14px;
+    }
+
+    .split-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 18px;
+      margin-top: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+    }
+
+    .split-list div {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--surface-2);
+      border: 1px solid rgba(60, 38, 18, 0.06);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid rgba(60, 38, 18, 0.07);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card .service-number {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--accent-dark);
+      font-size: 0.84rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .portfolio-shell {
+      background: linear-gradient(180deg, rgba(239, 228, 215, 0.65), rgba(247, 241, 234, 1));
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      padding: 11px 15px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--text);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-item {
+      grid-column: span 4;
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      border-radius: 22px;
+      background: #d9c6b4;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(60, 38, 18, 0.07);
+      transition: var(--transition);
+    }
+
+    .gallery-item.tall {
+      min-height: 520px;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 8;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      background: linear-gradient(180deg, transparent 38%, rgba(12, 12, 12, 0.68) 100%);
+    }
+
+    .gallery-meta {
+      color: var(--white);
+    }
+
+    .gallery-meta span {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.9;
+      margin-bottom: 6px;
+    }
+
+    .gallery-meta h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .process-grid,
+    .testimonial-grid,
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .process-card,
+    .testimonial-card,
+    .faq-item {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid rgba(60, 38, 18, 0.07);
+      box-shadow: var(--shadow-soft);
+      padding: 28px;
+    }
+
+    .process-card .step {
+      color: var(--accent-dark);
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    .process-card h3,
+    .testimonial-card h3 {
+      font-size: 1.28rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .process-card p,
+    .testimonial-card p,
+    .faq-item p {
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .testimonial-card em {
+      display: block;
+      color: var(--accent-dark);
+      font-style: normal;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      margin-top: 14px;
+    }
+
+    .booking-wrap {
+      background: linear-gradient(180deg, rgba(201, 111, 45, 0.08), rgba(247, 241, 234, 1));
+    }
+
+    .contact-card p strong,
+    .booking-info p strong {
+      color: var(--text);
+    }
+
+    .booking-info ul {
+      margin-top: 12px;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+    }
+
+    .booking-info li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--surface-2);
+      border: 1px solid rgba(60, 38, 18, 0.06);
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(60, 38, 18, 0.14);
+      background: #fffdf9;
+      color: var(--text);
+      border-radius: 16px;
+      padding: 14px 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: var(--transition);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(201, 111, 45, 0.10);
+    }
+
+    .field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-note,
+    .small-note {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .form-success {
+      display: none;
+      margin-top: 6px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(201, 111, 45, 0.10);
+      border: 1px solid rgba(201, 111, 45, 0.16);
+      color: var(--accent-dark);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .faq-item h3 {
+      font-size: 1.18rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    footer {
+      background: var(--black);
+      color: #f0e7dd;
+      padding: 38px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p,
+    .footer-links a,
+    .footer-contact p {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(240, 231, 221, 0.78);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 18px 0 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .footer-right {
+      display: grid;
+      gap: 16px;
+      justify-items: start;
+    }
+
+    .copyright {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(240, 231, 221, 0.62);
+      font-size: 0.9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .services-grid,
+      .process-grid,
+      .testimonial-grid,
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-item {
+        grid-column: span 6;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 12;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 78px;
+        background: rgba(247, 241, 234, 0.98);
+        border-bottom: 1px solid rgba(60, 38, 18, 0.08);
+        padding: 18px 4%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero-stats,
+      .about-grid,
+      .contact-grid,
+      .booking-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split-list,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .section {
+        padding: 68px 0;
+      }
+
+      .hero {
+        min-height: 88vh;
+      }
+
+      .hero h1 {
+        font-size: 2.95rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .process-grid,
+      .testimonial-grid,
+      .faq-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item,
+      .gallery-item.wide {
+        grid-column: span 12;
+        min-height: 340px;
+      }
+
+      .gallery-item.tall {
+        min-height: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Amanu Visuals home">
+        <span class="brand-name">Amanu Visuals</span>
+        <span class="brand-tag">Luxury Photography</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+        Menu
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#experience">Experience</a>
+        <a href="#booking">Booking</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="eyebrow">Luxury editorial storytelling</div>
+          <h1>Refined photography for the moments that deserve more than ordinary.</h1>
+          <p>
+            Amanu Visuals creates elevated imagery for weddings, maternity, newborn, branding, interiors, boudoir, graduation, fashion, pets, cars, architecture, products, couples, family, gender reveal, and portrait sessions with a polished luxury feel.
+          </p>
+
+          <div class="btn-row">
+            <a href="#booking" class="btn">Book Your Session</a>
+            <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Luxury Style</strong>
+              <span>Clean, timeless, editorial imagery with warm refined tones.</span>
+            </div>
+            <div class="stat">
+              <strong>All Session Types</strong>
+              <span>From personal milestones to premium brand and product work.</span>
+            </div>
+            <div class="stat">
+              <strong>Client-Focused</strong>
+              <span>Guided experience from planning through final gallery delivery.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="panel reveal">
+            <div class="section-header">
+              <div class="eyebrow">About Amanu Visuals</div>
+              <h2>Elegant images with presence, warmth, and intention.</h2>
+              <p>
+                Amanu Visuals is built around luxury presentation and meaningful storytelling. Every session is shaped to feel intentional, relaxed, and beautifully finished, whether the focus is a wedding day, a newborn session, a creative portrait, or a polished commercial shoot.
+              </p>
+            </div>
+
+            <p>
+              The goal is not just to take beautiful photos, but to create imagery that feels elevated and memorable. Each gallery is crafted with attention to styling, atmosphere, emotion, and visual detail.
+            </p>
+
+            <div class="chip-row">
+              <span class="chip">Editorial feel</span>
+              <span class="chip">Timeless tones</span>
+              <span class="chip">Luxury experience</span>
+              <span class="chip">Personal guidance</span>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <h3>Specialties</h3>
+            <p>
+              Amanu Visuals offers photography across a wide range of personal and commercial categories.
+            </p>
+
+            <div class="split-list">
+              <div>Maternity</div>
+              <div>Portrait</div>
+              <div>Newborn</div>
+              <div>Branding</div>
+              <div>Interior</div>
+              <div>Elopement</div>
+              <div>Boudoir</div>
+              <div>Graduation</div>
+              <div>Fashion</div>
+              <div>Pets</div>
+              <div>Cars</div>
+              <div>Architecture</div>
+              <div>Product</div>
+              <div>Couples</div>
+              <div>Family</div>
+              <div>Gender Reveal</div>
+              <div>Wedding</div>
+              <div>Custom Creative Sessions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Services</div>
+          <h2>Photography tailored to personal milestones, brands, and premium experiences.</h2>
+          <p>
+            Each session is thoughtfully planned to match your vision, location, and style. Replace or edit any service wording below to fit your packages.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-number">01</div>
+            <h3>Weddings and Elopements</h3>
+            <p>
+              Intentional wedding coverage with emotional storytelling, refined composition, and elegant final edits that preserve the atmosphere of your day.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">02</div>
+            <h3>Maternity, Newborn, and Family</h3>
+            <p>
+              Soft, intimate photography for growing families, designed to feel warm, relaxed, and timeless from start to finish.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">03</div>
+            <h3>Portraits and Graduation</h3>
+            <p>
+              Elevated portraits with clean direction, natural confidence, and polished styling for graduates, professionals, and personal milestones.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">04</div>
+            <h3>Branding and Product</h3>
+            <p>
+              Visual content for businesses, creatives, and product-based brands that need premium imagery for websites, launches, and campaigns.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">05</div>
+            <h3>Fashion, Boudoir, and Editorial</h3>
+            <p>
+              Bold, luxury-forward imagery with a confident editorial feel, carefully styled to create a polished and memorable visual identity.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">06</div>
+            <h3>Interior, Architecture, Cars, and Pets</h3>
+            <p>
+              Specialty photography for spaces, vehicles, and personal lifestyle subjects, captured with attention to texture, shape, light, and presence.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-shell" id="portfolio">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Portfolio</div>
+          <h2>A gallery designed to grow with your work.</h2>
+          <p>
+            Replace each image path with your own files. You can duplicate any gallery item below to add as many photos as you want.
+          </p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="wedding">Wedding</button>
+          <button class="filter-btn" data-filter="maternity">Maternity</button>
+          <button class="filter-btn" data-filter="newborn">Newborn</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="portrait">Portrait</button>
+          <button class="filter-btn" data-filter="fashion">Fashion</button>
+          <button class="filter-btn" data-filter="family">Family</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Replace these image files with your own photos in an /images folder -->
+
+          <article class="gallery-item wide tall reveal" data-category="wedding">
+            <img src="images/wedding-1.jpg" alt="Wedding photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Wedding</span>
+                <h3>Elegant Celebration</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="maternity">
+            <img src="images/maternity-1.jpg" alt="Maternity photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Maternity</span>
+                <h3>Soft and Timeless</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="branding">
+            <img src="images/branding-1.jpg" alt="Branding photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Branding</span>
+                <h3>Polished Business Imagery</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item tall reveal" data-category="newborn">
+            <img src="images/newborn-1.jpg" alt="Newborn photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Newborn</span>
+                <h3>Quiet Beautiful Beginnings</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="portrait">
+            <img src="images/portrait-1.jpg" alt="Portrait photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Portrait</span>
+                <h3>Refined Personal Portraits</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="fashion">
+            <img src="images/fashion-1.jpg" alt="Fashion photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Fashion</span>
+                <h3>Editorial Styling</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item wide reveal" data-category="family">
+            <img src="images/family-1.jpg" alt="Family photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Family</span>
+                <h3>Connection and Presence</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="wedding">
+            <img src="images/elopement-1.jpg" alt="Elopement photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Elopement</span>
+                <h3>Intimate Vows</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="branding">
+            <img src="images/product-1.jpg" alt="Product photography by Amanu Visuals" />
+            <div class="gallery-overlay">
+              <div class="gallery-meta">
+                <span>Product</span>
+                <h3>Luxury Brand Details</h3>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="panel reveal" style="margin-top: 26px;">
+          <h3>How to add all your photos</h3>
+          <p>
+            Put your images in an <strong>images</strong> folder next to this file, then replace the sample filenames above with your real file names.
+          </p>
+          <p class="small-note">
+            Example: change <strong>images/wedding-1.jpg</strong> to your actual photo name like <strong>images/amanu-wedding-rose-garden.jpg</strong>. To add more images, copy one entire <strong>gallery-item</strong> block and paste it below.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">The Experience</div>
+          <h2>A luxury process that feels guided, calm, and beautifully organized.</h2>
+          <p>
+            This section helps clients understand what it feels like to work with you before they ever send an inquiry.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <div class="step">Step 01</div>
+            <h3>Inquiry and Vision</h3>
+            <p>
+              Clients share their date, session type, location, and mood. This is where the vision starts taking shape.
+            </p>
+          </article>
+
+          <article class="process-card reveal">
+            <div class="step">Step 02</div>
+            <h3>Planning and Styling</h3>
+            <p>
+              Session details, wardrobe ideas, locations, and visual direction come together to create a polished experience.
+            </p>
+          </article>
+
+          <article class="process-card reveal">
+            <div class="step">Step 03</div>
+            <h3>Capture and Delivery</h3>
+            <p>
+              The session is photographed with care and guidance, then edited into a final gallery with a timeless luxury finish.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Testimonials</div>
+          <h2>Sample placeholder testimonials for layout and design.</h2>
+          <p>
+            These are intentionally marked as sample text. Replace them later with real client feedback when you receive written reviews.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <h3>Elegant and effortless</h3>
+            <p>
+              "Sample testimonial placeholder. Amanu Visuals made the whole experience feel elevated, comfortable, and beautifully organized from beginning to end."
+            </p>
+            <em>Sample placeholder testimonial</em>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <h3>Beautiful final gallery</h3>
+            <p>
+              "Sample testimonial placeholder. The final images felt timeless, polished, and full of genuine emotion. Every detail looked amazing."
+            </p>
+            <em>Sample placeholder testimonial</em>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <h3>Luxury client experience</h3>
+            <p>
+              "Sample testimonial placeholder. From planning to delivery, the process felt professional, warm, and truly high-end."
+            </p>
+            <em>Sample placeholder testimonial</em>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking-wrap" id="booking">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Booking</div>
+          <h2>Inquire about your session.</h2>
+          <p>
+            This form is ready for the front end. To make it send messages, connect it to a service like Formspree later.
+          </p>
+        </div>
+
+        <div class="booking-grid">
+          <div class="panel booking-info reveal">
+            <h3>Booking Details</h3>
+            <p><strong>Business:</strong> Amanu Visuals</p>
+            <p><strong>Email:</strong> amanphotographyby@gmail.com</p>
+            <p><strong>Phone:</strong> 206 530 5998</p>
+            <p>
+              Available for luxury photography sessions across personal milestones, editorial work, and premium brand imagery.
+            </p>
+
+            <ul>
+              <li><strong>Session types:</strong> Wedding, maternity, newborn, portrait, branding, boudoir, fashion, family, products, interiors, and more.</li>
+              <li><strong>Planning support:</strong> Guidance for wardrobe, location, mood, and visual direction.</li>
+              <li><strong>Ideal for:</strong> Clients who want polished imagery with a timeless high-end feel.</li>
+            </ul>
+          </div>
+
+          <div class="panel reveal">
+            <!-- To connect Formspree later, replace action="#" with your Formspree endpoint -->
+            <form id="bookingForm" action="#" method="post">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your full name" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="206 530 5998" />
+                </div>
+
+                <div class="field">
+                  <label for="service">Photography Type</label>
+                  <select id="service" name="service" required>
+                    <option value="">Select a session</option>
+                    <option>Maternity</option>
+                    <option>Portrait</option>
+                    <option>Newborn</option>
+                    <option>Branding</option>
+                    <option>Interior</option>
+                    <option>Elopement</option>
+                    <option>Boudoir</option>
+                    <option>Graduation</option>
+                    <option>Fashion</option>
+                    <option>Pets</option>
+                    <option>Cars</option>
+                    <option>Architecture</option>
+                    <option>Product</option>
+                    <option>Couples</option>
+                    <option>Family</option>
+                    <option>Gender Reveal</option>
+                    <option>Wedding</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="date">Preferred Date</label>
+                  <input type="date" id="date" name="date" />
+                </div>
+
+                <div class="field">
+                  <label for="location">Location</label>
+                  <input type="text" id="location" name="location" placeholder="City, venue, or area" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">Tell me about your vision</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Share the type of session, mood, inspiration, number of people, and anything important to know."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn">Send Inquiry</button>
+              <p class="form-note">
+                Demo mode: this form currently shows a success message on the page. Connect Formspree or another form service to receive actual emails.
+              </p>
+              <div class="form-success" id="formSuccess">
+                Your inquiry has been prepared. Connect this form to Formspree to receive real submissions by email.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">FAQ</div>
+          <h2>Helpful information before clients book.</h2>
+          <p>
+            You can change these answers to match your own process, turnaround time, pricing, and policies.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item reveal">
+            <h3>What kinds of sessions do you offer?</h3>
+            <p>
+              Amanu Visuals offers photography for weddings, maternity, newborn, portraits, branding, interiors, boudoir, graduation, fashion, pets, cars, architecture, products, couples, family, and more.
+            </p>
+          </article>
+
+          <article class="faq-item reveal">
+            <h3>How do I book?</h3>
+            <p>
+              Fill out the inquiry form with your session type, preferred date, location, and vision. From there, the details can be discussed and confirmed directly.
+            </p>
+          </article>
+
+          <article class="faq-item reveal">
+            <h3>Can I choose my location and style?</h3>
+            <p>
+              Yes. Sessions can be tailored around your preferred mood, setting, wardrobe ideas, and creative direction to match the final look you want.
+            </p>
+          </article>
+
+          <article class="faq-item reveal">
+            <h3>Can I add more photos to this website later?</h3>
+            <p>
+              Yes. This layout is designed so you can duplicate gallery blocks and keep expanding the portfolio as your body of work grows.
+            </p>
+          </article>
+
+          <article class="faq-item reveal">
+            <h3>Are the reviews on this site real?</h3>
+            <p>
+              The testimonial section currently uses sample placeholder text. Replace those with real written feedback once clients send reviews you want to publish.
+            </p>
+          </article>
+
+          <article class="faq-item reveal">
+            <h3>Can the contact form send emails?</h3>
+            <p>
+              Yes, once it is connected to a form service like Formspree, Netlify Forms, or a custom backend. Right now it is set up as a styled front-end form.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Amanu Visuals</h3>
+          <p>
+            Luxury photography for meaningful milestones, creative portraits, and refined brand imagery.
+          </p>
+
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#booking">Booking</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+
+        <div class="footer-right footer-contact">
+          <p><strong>Email:</strong> amanphotographyby@gmail.com</p>
+          <p><strong>Phone:</strong> 206 530 5998</p>
+          <p><strong>Brand:</strong> Amanu Visuals</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        Copyright 2026 Amanu Visuals. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        galleryItems.forEach(item => {
+          const category = item.dataset.category;
+
+          if (filter === "all" || category === filter) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+
+    const form = document.getElementById("bookingForm");
+    const formSuccess = document.getElementById("formSuccess");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      formSuccess.style.display = "block";
+      form.reset();
+      formSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    const revealItems = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+  </script>
+</body>
+</html>
