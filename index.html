@@ -1429,12 +1429,7 @@
     const form = document.getElementById("bookingForm");
     const formSuccess = document.getElementById("formSuccess");
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      formSuccess.style.display = "block";
-      form.reset();
-      formSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    });
+   
 
     const revealItems = document.querySelectorAll(".reveal");
 
